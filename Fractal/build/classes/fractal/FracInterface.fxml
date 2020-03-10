@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fractal.fractalImagesController">
+   <children>
+      <ImageView fx:id="FracImage" fitHeight="600.0" fitWidth="800.0" layoutX="25.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../test.bmp" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="ColorValuesGrid" layoutX="78.0" layoutY="14.0" prefHeight="120.0" prefWidth="125.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="786.0" minWidth="10.0" prefWidth="55.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="HueMultText" strokeType="OUTSIDE" strokeWidth="0.0" text="Hue multiplier" />
+            <Text fx:id="SaturationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturation" GridPane.rowIndex="2" />
+            <Text fx:id="BrightnessText" strokeType="OUTSIDE" strokeWidth="0.0" text="Brightness" GridPane.rowIndex="3" />
+            <TextField fx:id="HueMultValue" maxHeight="25.0" maxWidth="35.0" minHeight="25.0" minWidth="35.0" prefHeight="25.0" prefWidth="35.0" text="1.0" GridPane.columnIndex="1" />
+            <TextField fx:id="SaturationValue" maxHeight="25.0" maxWidth="35.0" minHeight="25.0" minWidth="35.0" prefHeight="25.0" prefWidth="35.0" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="BrightnessValue" maxHeight="25.0" maxWidth="35.0" minHeight="25.0" minWidth="35.0" prefHeight="25.0" prefWidth="35.0" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="HueOffsetText" strokeType="OUTSIDE" strokeWidth="0.0" text="Hue offset" GridPane.rowIndex="1" />
+            <TextField fx:id="HueOffsetValue" maxHeight="25.0" maxWidth="35.0" minHeight="25.0" minWidth="0.0" prefHeight="25.0" prefWidth="35.0" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="ColorLabelGrid" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="30.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="ColorLabelText" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+      <GridPane fx:id="ZoomLabelGrid" layoutX="214.0" layoutY="14.0" prefHeight="30.0" prefWidth="30.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fx:id="ZoomLabelText" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoom">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+      <GridPane fx:id="ZoomValuesGrid" layoutX="285.0" layoutY="14.0" prefHeight="120.0" prefWidth="105.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="68.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="786.0" minWidth="10.0" prefWidth="44.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fx:id="ZoomXText" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoom x" />
+            <Text fx:id="ZoomYText" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoom y" GridPane.rowIndex="1" />
+            <Text fx:id="ZoomScaleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Scale" GridPane.rowIndex="2" />
+            <TextField fx:id="ZoomXValue" maxHeight="25.0" maxWidth="40.0" minHeight="25.0" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="400" GridPane.columnIndex="1" />
+            <TextField fx:id="ZoomYValue" maxHeight="25.0" maxWidth="40.0" minHeight="25.0" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="300" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ScaleValue" maxHeight="25.0" maxWidth="40.0" minHeight="25.0" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button fx:id="UpdateButton" layoutX="487.0" layoutY="106.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="SaveButton" layoutX="597.0" layoutY="106.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Button fx:id="ResetButton" layoutX="690.0" layoutY="106.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+      <GridPane layoutX="337.0" layoutY="143.0" prefHeight="30.0" prefWidth="177.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="MaxIterationLabelText" strokeType="OUTSIDE" strokeWidth="0.0" text="Max iterations" />
+            <TextField fx:id="MaxIterationValue" maxHeight="25.0" maxWidth="50.0" minHeight="25.0" minWidth="50.0" prefHeight="25.0" prefWidth="50.0" text="100" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Text layoutX="425.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mandelbrot set viewer applying a smooth coloring algorithm. Change the values to the left and then press Update to display the new fractal, or Save to store it to a .bmp file." textAlignment="CENTER" wrappingWidth="384.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
